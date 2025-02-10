@@ -1,0 +1,15 @@
+git init
+git add 파일명
+git commit -m '설명'
+git branch -M main
+	로컬의 브랜치명은 master, 원격의 브랜치명은 main
+git remote add origin https://github.com/hasaway11/html01.git
+git push -u origin main
+  로컬 저장소의 main 브랜치를 원격 저장소의 origin으로 푸시하고, 동시에 로컬 브랜치와 원격 브랜치 간의 기본 연결을 설정
+
+Working 영역 : 작업중인 폴더
+Staging 영역 : 커밋을 위한 대기 영역
+	git add
+	git status
+	git reset
+Repository : 커밋들이 모여있는 저장소
