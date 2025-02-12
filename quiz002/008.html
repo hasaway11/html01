@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+      #app {
+        width: 1000px;
+        margin: 0 auto;
+      }
+
+      #upper {
+        position: relative;
+      }
+
+      #upper i {
+        font-size: 1.5em;
+        color: white;
+      }
+
+      #prev, #next {
+        background-color: rgba(220,220,220,0.2);
+        width:35px;
+        height: 350px;
+        line-height: 350px;
+        position: absolute;
+        text-align: center;
+      }
+
+      #prev {
+        top: 0px;
+        left: 0px;
+      }
+
+      #next {
+        top:0px;
+        right: 0px;
+      }
+
+      #prev i:hover, #next i:hover {
+        cursor: pointer;
+      }
+
+      #lower {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+      #lower a {
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        background-color: lightgrey;
+        margin: 0 5px;
+      }
+
+      #lower .select {
+        background-color: gray;
+      }
+    </style>
+    <script>
+      $(document).ready(()=>{
+        const images = [];
+        images[0] = 'https://www.w3schools.com/howto/img_woods_wide.jpg';
+        images[1] = 'https://www.w3schools.com/howto/img_5terre_wide.jpg';
+        images[2] = 'https://www.w3schools.com/howto/img_mountains_wide.jpg';
+        images[3] = 'https://www.w3schools.com/howto/img_snow_wide.jpg';
+        let index = 0;
+
+        const $prev = $('#prev');
+        const $next = $('#next');
+        const $slider = $('#slider');
+        $slider.attr('src', images[0]);
+
+        $prev.click(function() {
+          index--;
+          if(index<0)
+            index=3;
+          $slider.attr('src', images[index]);
+        });
+
+        $next.click(function() {
+          index++;
+          if(index>3)
+            index=0;
+          $slider.attr('src', images[index]);
+        });
+
+        $('#lower a').click(function() {
+          $('#lower a').removeClass('select');
+          const index = parseInt($(this).attr("data-index"));
+          $slider.attr('src', images[index]);
+          $(this).addClass('select');
+        })
+      });
+    </script>
+</head>
+<body>
+  <div id="app">
+    <div id="upper">
+      <img id='slider'>
+      <div id="prev"><i class="fa-solid fa-arrow-left"></i></div>
+      <div id="next"><i class="fa-solid fa-arrow-right"></i></div>
+    </div>
+    <div id="lower">
+      <a href="#" data-index="0" class="select"></a>
+      <a href="#" data-index="1"></a>
+      <a href="#" data-index="2"></a>
+      <a href="#" data-index="3"></a>
+    </div>
+  </div>
+</body>
+</html>

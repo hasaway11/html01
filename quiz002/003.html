@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    window.onload = function() {
+      $("#height").blur(function() {
+        const height = $("#height").val();
+        if(isNaN(height)===true || height==='') {
+          $("#height").val('');
+          $("#height").attr("placeholder", "숫자를 입력하세요");
+        }
+      });
+      $("#calc").click(function() {
+        const height = $("#height").val();
+        if(isNaN(height)===true || height==='') {
+          $("#height").val('');
+          $("#height").attr("placeholder", "숫자를 입력하세요");
+        } else {
+          let weight = height - 110;
+          if($("#gender").val()==='남성')
+            weight = height - 105;
+          $("#result").text(weight);
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+    <h1>남성/여성 적정 체중 계산기</h1>
+    <div>
+        <div>
+            <label for='height'>키 :</label>
+            <input type="text" id="height">
+        </div>
+        <div>
+            <label for='gender'>성별 : </label>
+            <select id='gender'>
+                <option value='여성'>여성</option>
+                <option value='남성'>남성</option>
+            </select>
+        </div>
+        <div>
+            <p>적정 체중 : <span id='result'></span>Kg</p>
+            <button id='calc'>계산</button>
+            <button id='clear'>리셋</button>
+        </div>
+    </div>
+</body>
+</html>

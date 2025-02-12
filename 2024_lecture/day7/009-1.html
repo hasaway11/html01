@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>타입변환</title>
+  </head>
+  <body>
+    <script>
+      const a = '15';
+      console.log(typeof a);    // string
+      console.log(typeof +a);   // number
+
+      const num1 = 100;
+
+      // +연산자가 글자1개와 사용되면 숫자로 타입을 바꾼다
+      const num2 = +a;
+      console.log(num1 + num2);
+
+      // 숫자와 글자를 +하면 숫자를 글자로 바꿔서 연결
+      console.log(num1+'')
+      
+    </script>
+  </body>
+</html>

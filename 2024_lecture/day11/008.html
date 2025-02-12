@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <style>
+      table { width: 600px;}
+      table, td { border:1px solid black; border-collapse: collapse;}
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <td>번호</td><td>할일</td><td>작성일</td><td></td>
+        </tr>
+      </thead>
+      <tbody id="target">
+
+      </tbody>
+    </table>
+    <script>
+      const todos = [
+        {tno:1, title:'자바 공부', day:'2024-03-10'},
+        {tno:2, title:'영어 공부', day:'2024-04-10'},
+        {tno:3, title:'마시고 놀자', day:'2024-05-10'},
+      ];
+      const target = document.getElementById('target');
+
+      for(let i=0; i<todos.length; i++) {
+        const html = `
+          <tr>
+            <td>${todos[i].tno}</td>
+            <td>${todos[i].title}</td>
+            <td>${todos[i].day}</td>
+            <td><button onclick='del(${i})'>삭제</button></td>
+          </tr>
+        `;
+        target.innerHTML = target.innerHTML + html;
+      }
+
+      function del(i) {
+        alert(i);
+      }
+    </script>
+  </body>
+</html>

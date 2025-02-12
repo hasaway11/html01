@@ -1,0 +1,19 @@
+<html>
+  <body>
+    <script>
+      /*
+        정적 타입 언어 : 개발자가 변수의 타입을 지정하고 변경이 불가능
+            String a;
+        동적 타입 언어 : 언어에 값을 보고 타입을 결정
+            let a = '5';      // string
+            a = a*a;          // a = '5'*'5' -> 5*5 -> 25
+            a = a+a;          // a = '5'+'5' -> 연결 '55'
+      */
+      const num1 = prompt('덧셈할 첫번째 숫자');
+      const num2 = prompt('덧셈할 두번째 숫자');
+      const hap = num1 + num2;
+      document.write(`<p>합계 : ${hap}</p>`);
+      document.write(`<p>${num1}+${num2}=${hap}</p>`)
+    </script>
+  </body>
+</html>

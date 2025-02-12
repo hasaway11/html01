@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>form</title>
+  </head>
+  <body>
+    <button>버튼1</button>
+    <input type="button" value="일반버튼">
+    <input type="submit" value="submit버튼">
+    <input type="reset" value="reset버튼">
+
+    <!-- method : get/post -->
+    <!-- 
+      get은 여러번 실행해도 상관없다 -> 서버에 저장된 정보가 변경되지 않는다(읽기)
+      post는 한번만 실행해야 된다 -> 서버의 상태를 변경한다(쓰기, 변경, 삭제11)
+     -->
+
+    <!-- enctype : urlencoded / form-data(파일 업로드) --> 
+    <form action="#" method="">
+      <!--
+        id는 프론트에서 사용하는 이름
+        백으로 데이터를 전달하려면 name이 필요
+      -->
+      <input type="text" id="num1" name="num1" value="10">
+      <!-- form안에 button은 submit이다-->
+      <button>submit</button>
+    </form>
+  </body>
+</html>

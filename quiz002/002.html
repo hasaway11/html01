@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    function check() {
+      const numInput = document.getElementById('num');
+      const num = numInput.value;
+      if(isNaN(num)===true || num==='') {
+        numInput.value = '';
+        numInput.setAttribute('placeholder',"숫자를 입력하세요");
+        return false;
+      }
+      return true;
+    };
+
+    function calc() {
+      if(check()===true) {
+        const num = document.getElementById('num').value;
+        document.getElementById('result').value = (num * num);
+      }
+    };
+
+    function reset() {
+      const numInput = document.getElementById('num');
+      numInput.value='';
+      document.getElementById('result').value = '';
+      numInput.focus();
+    };
+
+    window.onload = function() {
+      document.getElementById('num').addEventListener('blur', check);
+      document.getElementById('calc').addEventListener('click', calc);
+      document.getElementById('reset').addEventListener('click', reset);
+    };
+  </script>
+</head>
+<body>
+    입력 : <input type="text" id="num">
+    제곱 : <input type="text" id="result" disabled>
+    <button id='calc'>계산하기</button>
+    <button id='reset'>리셋하기</button>
+</body>
+</html>

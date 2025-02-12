@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <!--
+      get/post 모두 데이터를 urlencode 형식으로 보낸다
+      단 get은 urlencoded된 데이터가 주소창에 보인다(querystring)
+      post는 urlencoded된 데이터가 보이지 않는다
+    -->
+
+    <!-- 
+      http 상태 코드 : 서버 응답을 상수로 정의
+      200 - 성공
+      400 - 잘못된 데이터. 서버에서 수신거부
+      404 - not found
+      405 - 주소은 correct. method 오류(get<-post, post<-get)
+      500 - 서버에서 처리 중 오류가 발생
+    -->
+    <form method="post" action="http://192.168.0.54:8081/server/post1">
+      <input type="text" name="username" value="spring">
+      <button>로그인</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+/* 
+  font-family에 폰트 이름을 여러개 적는 이유 : 대체 폰트 지정
+  폰트 이름에 띄어쓰기가 있거나 특수문자인 경우 따옴표 
+*/
+* {
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+#app {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+header, nav, footer {
+  height: 50px;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+}
+
+aside {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex 배치할 때 내용의 너비를 무시해라*/
+  flex-basis: 0;
+  flex-grow: 1;
+  background-color: lightgray;
+}
+
+section {
+  min-height: 600px;
+  flex-basis: 0;
+  flex-grow: 6;
+  border:1px solid deepskyblue;
+}
+
+nav {
+  display: flex;
+  justify-content: left;
+}
+
+nav>ol {
+  display: flex;
+}
+
+nav a {
+  display: block;
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+nav li:hover a{
+  background-color: blueviolet;
+  color:white;
+}
+
+.finish {
+  text-decoration: line-through;
+}

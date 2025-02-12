@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>box-model</title>
+    <style>
+      /* property */
+      div {
+        /* width는 content의 너비*/
+        width: 200px;
+        /* box-sizing을 이용해 내용+패딩+보더를 너비로 지정*/
+        box-sizing: border-box;
+        height:200px;
+        line-height: 200px;
+        background-color: aqua;
+        text-align: center;
+        margin: 10px 0;
+      }
+      #a { padding: 50px; }
+
+    </style>
+  </head>
+  <body>
+    <!-- html의 속성은 attribute -->
+    <div id="a">A</div>
+    <div id="b">B</div>
+  </body>
+</html>

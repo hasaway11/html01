@@ -1,0 +1,18 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <button onclick="점등()">점등</button>
+    <img src="https://www.w3schools.com/js/pic_bulboff.gif" id="img">
+    <button onclick="소등()">소등</button>
+    <script>
+      const img = document.getElementById('img');
+      function 점등() {
+        img.src="https://www.w3schools.com/js/pic_bulbon.gif";
+      }
+      function 소등() {
+        img.src="https://www.w3schools.com/js/pic_bulboff.gif";
+      }
+    </script>
+  </body>
+</html>

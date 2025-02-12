@@ -1,0 +1,26 @@
+<html>
+  <body>
+    <h1>제곱계산기</h1>
+    <div>
+      <input type="text" id="num" value>
+      <button onclick="계산()">제곱계산</button>
+      <p>결과:<span id="result"></span></p>
+    </div>
+    <script>
+      // 함수 정의 -> 실행과는 별개의 개념
+      function 계산() {
+        const input = document.getElementById('num');
+        console.log(input);
+        const span = document.getElementById('result');
+        console.log(span)
+        const num = +input.value;
+        console.log(num);
+        const result = num * num;
+        console.log(result);
+        span.innerHTML = result;
+      }
+      // 함수 호출
+      // 계산();
+    </script>
+  </body>
+</html>

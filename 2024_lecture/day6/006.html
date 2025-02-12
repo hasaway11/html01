@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <style>
+      * {margin:0; padding:0; box-sizing: border-box;}
+      #app { width: 800px; margin: 0 auto;}
+      header, nav, footer {height:50px; border:1px solid red;}
+      aside { width:100px; height:250px; background-color: lightblue;
+        float:left;}
+      section { width:600px; min-height:600px; background-color: aqua;
+        float:left;}
+      main { overflow: hidden; }
+    </style>
+  </head>
+  <body>
+    <!--
+      영역을 분할하는 태그 : div
+      새로운 영역 태그 : header, footer, nav, main, aside, section, article
+      (시맨틱 태그) -> 시맨틱 마크업
+    -->
+    <div id="app">
+      <header>인천일보아카데미</header>
+      <nav>메인 메뉴</nav>
+      <main>
+        <aside>left</aside>
+        <section>
+        </section>
+        <aside>right</aside>
+      </main>
+      <footer>copyright &copy;2024 ICIA</footer>
+    </div>
+  </body>
+</html>
+
+
+
+

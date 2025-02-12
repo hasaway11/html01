@@ -1,0 +1,20 @@
+<html>
+  <body>
+    <img id="img">
+    <div>
+      <!-- 파라미터로 함수가 출력할 사진 이름을 전달-->
+      <button onclick="출력('img_nature_wide.jpg')">1</button>
+      <button onclick="출력('img_snow_wide.jpg')">2</button>
+      <button onclick="출력('img_lights_wide.jpg')">3</button>
+      <button onclick="출력('img_mountains_wide.jpg')">4</button>
+    </div>
+    <script>
+      const url = 'https://www.w3schools.com/howto/';
+      const img = document.getElementById('img');
+      img.src=`${url}img_natute_wide.jpg`
+      function 출력(photo) {
+        img.src = `${url}${photo}`;
+      }
+    </script>
+  </body>
+</html>

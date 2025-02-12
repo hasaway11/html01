@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    #level {
+      display: flex;
+      color:white;
+    }
+
+    #level>div{
+      flex-grow: 1;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      padding-left:7%;
+      padding-right:5px;
+    }
+
+    .lv1 {
+      background-color: #7da4bd;
+    }
+
+    .lv2 {
+      background-color: #557cd5;
+    }
+
+    .lv3 {
+      background-color: #787ad6;
+    }
+
+    .lv4 {
+      background-color: #ba78d9;
+    }
+
+    .lv5 {
+      background-color: #f85264;
+    }
+
+    #result {
+      color:red;
+    }
+
+    .small {
+      color: black;
+      font-size: 0.8em;
+      display: flex;
+      align-items: center;
+    }
+
+    #panel {
+      display: none;
+    }
+  </style>
+  <script>
+    $(document).ready(function() {
+      $('#calc').click(function() {
+        const 키 = parseInt($('#length').val())/100;
+        const 체중 = parseFloat($('#weight').val());
+        const bmi계산 = 체중/(키*키);
+        const bmi = Math.round(bmi계산*100)/100;
+        
+        if(bmi<18.5) {
+          $('#result').text(`${bmi}(저체중)`);
+        } else if(bmi<23) {
+          $('#result').text(`${bmi}(정상)`);
+        } else if(bmi<25) {
+          $('#result').text(`${bmi}(과체중)`);
+        } else if(bmi<30) {
+          $('#result').text(`${bmi}(비만)`);
+        } else {
+          $('#result').text(`${bmi}(고도비만)`);
+        }
+
+        $('#panel').css('display','block');
+      });
+    });
+  </script>
+  <title>Document</title>
+</head>
+<body>
+  <fieldset>
+    <legend>bmi계산</legend>
+    <label>신장</label>
+    <input type="number" id="length" placeholder="cm">
+    <label>체중</label>
+    <input type="number" id="weight" placeholder="kg">
+    <button id="calc">계산</button>
+  </fieldset>
+  <div id="panel">
+    <h1>나의 신체질량지수 (BMI) <span id="result"></span></h1>
+    <div id="level">
+      <div class="lv1">
+        <span>저체중</span>
+        <span class="small">18.5</span>
+      </div>
+      <div class="lv2">
+        <span>정상</span>
+        <span class="small">23</span>
+      </div>
+      <div class="lv3">
+        <span>과체중</span>
+        <span class="small">25</span>
+      </div>
+      <div class="lv4">
+        <span>비만</span>
+        <span class="small">30</span>
+      </div>
+      <div class="lv5">
+        <span>고도비만</span>
+        <span class="small"></span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

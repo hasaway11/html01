@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(document).ready(function() {
+      $('#calc').click(function() {
+        const $num1 = $('#num1');
+        const $num2 = $('#num2');
+        const num1 = parseFloat($num1.val());
+        const num2 = parseFloat($num2.val());
+        const op = $('#op').val();
+        
+        if(isNaN(num1)) {
+          alert('숫자를 입력하세요');
+          $num1.val('').focus();
+          return false;
+        } else if(isNaN(num1)) {
+          alert('숫자를 입력하세요');
+          $num2.val('').focus();
+          return false;
+        } else if(op===null) {
+          alert('연산을 선택하세요')
+          return false;
+        }
+
+        if(op==='+') 
+          $('#result').val(num1 + num2);
+        else if(op==='-') 
+          $('#result').val(num1 - num2);
+        else if(op==='*') 
+          $('#result').val(num1 * num2);
+        else if(op==='/')
+          $('#result').val(num1 / num2);
+      })
+    })
+  </script>
+</head>
+<body>
+  <fieldset>
+    <legend>계산기</legend>
+    <input type="text" id="num1">
+    <select id="op">
+      <option disabled selected>연산선택</option>
+      <option>+</option>
+      <option>-</option>
+      <option>*</option>
+      <option>/</option>
+    </select>
+    <input type="text" id="num2">
+    =
+    <input type="number" id="result" disabled>
+    <button id="calc">계산</button>
+  </fieldset>
+</body>
+</html>

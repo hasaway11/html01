@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+    }
+    table {
+      width: 800px;
+      height: 400px;
+    }
+    table, td, th {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    span {
+      width: 180px;
+      color: white;
+      background-color: blueviolet;
+      border: 3px solid blue;
+      height: 35px;
+      border-radius: 20px;
+      line-height: 35px;
+      display: inline-block;
+      text-align: center;
+    }
+    td {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <caption>&starf;&nbsp;영어회화 수강 안내&nbsp;&starf;</caption>
+    <thead>
+      <tr>
+        <th>수강 레벨</th>
+        <th>코스A</th>
+        <th>코스B</th>
+        <th>수강기간</th>
+        <th>세부내용보기</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>레벨1</td>
+        <td>Side by Side 1</td>
+        <td>American Headway 1</td>
+        <td>1개월</td>
+        <td>
+          <span>세부내용보기</span>
+        </td>
+      </tr>
+      <tr>
+        <td>레벨2</td>
+        <td>Side by Side 2</td>
+        <td>American Headway 2</td>
+        <td>1개월</td>
+        <td>
+          <div><span>세부내용보기</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>레벨3</td>
+        <td>Side by Side 3</td>
+        <td>American Headway 3</td>
+        <td>1개월</td>
+        <td>
+          <span>세부내용보기</span>
+        </td>
+      </tr>
+      <tr>
+        <td>레벨4</td>
+        <td colspan="2">Exploring English 1</td>
+        <td>2개월</td>
+        <td style="text-align: center;">
+          <span>세부내용보기</span>
+        </td>
+      </tr>
+      <tr>
+        <td>레벨5</td>
+        <td colspan="2">Exploring English 2</td>
+        <td>2개월</td>
+        <td>
+          <span>세부내용보기</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+      $(document).ready(()=>{
+        const images = [];
+        images[0] = 'https://www.w3schools.com/howto/img_woods_wide.jpg';
+        images[1] = 'https://www.w3schools.com/howto/img_5terre_wide.jpg';
+        images[2] = 'https://www.w3schools.com/howto/img_mountains_wide.jpg';
+        images[3] = 'https://www.w3schools.com/howto/img_snow_wide.jpg';
+        let index = 0;
+
+        const $prev = $('#prev');
+        const $next = $('#next');
+        const $slider = $('#slider');
+        $slider.attr('src', images[0]);
+
+        $prev.click(function() {
+          index--;
+          if(index<0)
+            index=3;
+          $slider.attr('src', images[index]);
+        });
+
+        $next.click(function() {
+          index++;
+          if(index>3)
+            index=0;
+          $slider.attr('src', images[++index]);
+        });
+
+      });
+    </script>
+</head>
+<body>
+    <img id='slider'>
+    <hr>
+    <button id='prev'>이전으로</button>
+    <button id='next'>다음으로</button>
+</body>
+</html>

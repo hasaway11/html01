@@ -1,0 +1,31 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div>
+      <div id="bunho"></div>
+      <div id="irum"></div>
+      <div id="tel"></div>
+      <div id="addr"></div>
+    </div>
+    <div id="target">
+    </div>
+    <script>
+      const 연락처1 = { 번호:1,  이름:'홍길동', 연락처:'1111', 주소:'서울시' };
+      document.getElementById('bunho').innerHTML = 연락처1.번호;
+      document.getElementById('irum').innerHTML = 연락처1.이름;
+      document.getElementById('tel').innerHTML = 연락처1.연락처;
+      document.getElementById('addr').innerHTML = 연락처1.주소;
+
+      const html=`
+        <div>${연락처1.번호}</div>
+        <div>${연락처1.이름}</div>
+        <div>${연락처1.연락처}</div>
+        <div>${연락처1.주소}</div>
+        <div><button>삭제</button></div>
+      `;
+      document.getElementById('target').innerHTML = html;
+    </script>
+  </body>
+</html>

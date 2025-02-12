@@ -1,0 +1,21 @@
+<html>
+  <head></head>
+  <body>
+    <!-- 
+      삼항연산자
+        식? 참일때 : 거짓일때값
+    -->
+    <!-- 숫자를 입력하면 자연수인지 아닌지 출력-->
+    <input type="number" id="num">
+    <button onclick="panjung()">판정</button>
+    <p id="target"></p>
+    <script>
+      // function 이름() {}
+      function panjung() {
+        const num = +document.getElementById('num').value;
+        const result = (num>0)? '자연수입니다' : '자연수가 아닙니다';
+        document.getElementById('target').innerHTML = result;
+      }
+    </script>
+  </body>
+</html>

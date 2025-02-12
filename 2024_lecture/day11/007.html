@@ -1,0 +1,29 @@
+<html>
+  <body>
+    <input type="number" id="val">
+    <button onclick="add()">추가</button>
+    <button onclick="sum()">합계 출력</button>
+    <script>
+      // 배열에 원소추가, 삭제
+      // 객체를 가리키는 ar는 참조변수(리모컨)
+      // const ar이라고 하면 ar이 가리키는 객체의 값은 변경가능
+      // ar이 다른 객체를 가리키도록 할 수 없다
+      const ar=[]
+      const element = document.getElementById('val');
+
+      function add() {
+        ar.push(+element.value);
+        element.value = '';
+        element.focus();
+      }
+
+      function sum() {
+        let hap = 0;
+        for(let i=0; i<ar.length; i++) {
+          hap += ar[i];
+        }
+        console.log(`합계:${hap}`)
+      }
+    </script>
+  </body>
+</html>

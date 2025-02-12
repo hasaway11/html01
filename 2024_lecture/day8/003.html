@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <input type="text" id="wage">
+    <button onclick="최저월급계산()">최저월급계산</button>
+    <p>최저급여에 따른 월급:<span id="result"></span></p>
+    <script>
+      function 최저월급계산() {
+        const input = document.getElementById('wage');
+        const result = document.getElementById('result');
+        const wage = +input.value;
+        const 최저월급 = wage * 209 + '원';
+        result.innerHTML = 최저월급;
+      }
+    </script>
+  </body>
+</html>

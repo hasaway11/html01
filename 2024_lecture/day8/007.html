@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <style>
+      .nav {
+        background-color: rgba(0,0,0,0.3);
+        color:white;
+        font-size: 1.5em;
+        height: 50px;
+        width:50px;
+        text-align: center;
+        line-height: 50px;
+      }
+
+      .nav {
+        position: absolute;
+      }
+
+      #parent {
+        position: relative;
+        width: 1000px;
+        margin: 0 auto;
+      }
+      #left {
+        left:0px;
+        top:150px;
+      }
+      #right {
+        right: 0px;
+        top: 150px;
+      }
+
+      .nav:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- html entity(특수문자)-->
+    <!--
+      임의의 위치로 이동 : position 속성
+      부모 : relative
+      이동할 요소 : absolute
+    -->
+    <div id="parent">
+      <div class="nav" id="left" onclick="left()">&lt;</div>
+      <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" id="img">
+      <div class="nav" id="right">&gt;</div>
+    </div>
+  </body>
+  <script>
+    // 배열은 값들에 인덱스를 준다
+    /*
+    let i = 0;
+    const ar=['hello', '안녕', '곰방와'];
+    console.log(ar[i++]);
+    console.log(ar[i++]);
+    console.log(ar[i++]);
+    */
+    let index = 0;
+    const photos = ['img_nature_wide.jpg','img_snow_wide.jpg',
+      'img_lights_wide.jpg','img_mountains_wide.jpg'];
+    const img = document.getElementById('img');
+
+    function left() {
+      index--;
+      if(index<0) {
+        index=3;
+      }
+      img.src = `https://www.w3schools.com/howto/${photos[index]}`;
+    }
+  </script>
+</html>

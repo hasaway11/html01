@@ -13,3 +13,66 @@ Staging 영역 : 커밋을 위한 대기 영역
 	git status
 	git reset
 Repository : 커밋들이 모여있는 저장소
+
+
+
+
+
+develop : 기능 개발이 진행되는 메인 브랜치. main 배포 전에 모든 코드가 여기에 병합됨
+feature : 팀원들이 각 기능을 개발하는 브랜치. 작업 완료 후 develop에 병합됨
+
+
+
+
+
+
+팀장
+	리파지토리 - settings - Collaboratos - 초청 - 초청 이메일 발송 
+팀원
+	이메일 초청 수락
+팀장
+	hasaway2 has been added as a collaborator on the repository. 메시지가 나타남
+	# develop 브랜치 생성
+	git checkout -b develop
+	git push origin develop
+
+	#  루트 페이지 개발 후 커밋 & push
+	git add .
+	git commit -m "leader: 루트 페이지 생성"
+	git push origin develop
+
+팀원 - 리포지토리 클론 및 브랜치 생성
+	git clone
+	# 최신 develop 브랜치를 받아옴
+	git checkout develop
+	git pull origin develop
+	
+	# 개인 feature 브랜치 생성 및 이동
+	git checkout -b feature/user1
+	git push origin feature/user1  # 원격에 등록
+	
+	# 자기소개 페이지 작업 후 커밋 & push
+	git add .
+	git commit -m "user1: 자기소개 페이지 추가"
+	git push origin feature/user1
+팀원 - Pull & Merge
+	git checkout develop
+	git pull origin develop  # 최신 develop 코드 가져오기
+
+	git checkout feature/user1
+	git merge develop  # 최신 내용 반영	
+
+팀원 - develop에 병합 요청 (PR 생성)
+	GitHub에서 Pull Request(PR)을 생성하여 develop에 병합 요청
+
+	base: develop, compare: feature/user1 선택 후 PR 요청
+	팀장이 PR을 수락하면 develop에 반영됨
+	팀장이 코드 리뷰를 못 하더라도,
+	GitHub에서 PR을 머지하면서 코드 충돌 여부만 확인하면 됨.
+
+
+팀장 (leader): develop 브랜치 생성 + 루트 페이지 개발
+팀원 (user1): feature/user1 브랜치 생성 + 자기소개 페이지 개발
+팀원 (user1): develop 최신화 → feature/user1에 반영 후 push
+팀원 (user1): PR 생성 → 팀장이 확인 후 병합
+🔹 이 방식이면 팀장이 직접 코드 검토하지 않아도 팀원들이 충돌 없이 협업 가능!

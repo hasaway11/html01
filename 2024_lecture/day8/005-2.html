@@ -1,0 +1,20 @@
+<html>
+  <head></head>
+  <body>
+    <img src="https://www.w3schools.com/js/pic_bulboff.gif" id="img">
+    <button onclick="toggle()">토글</button>
+    <script>
+      // 현재 상태
+      let isSwitchOn = false;
+      const img = document.getElementById('img');
+      function toggle() {
+        if(isSwitchOn==true) {
+          img.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+        } else {
+          img.src = "https://www.w3schools.com/js/pic_bulbon.gif";
+        }
+        isSwitchOn = !isSwitchOn;
+      }
+    </script>
+  </body>
+</html>

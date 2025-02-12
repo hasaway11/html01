@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+  <student>
+    <name>홍길동</name>
+    <year>3</year>
+    <major>컴퓨터공학</major>
+  </student>
+  <student name="홍길동">
+    <year>3</year>
+    <major>컴퓨터공학</major>
+  </student>
+</students>  
+
+<!-- 
+  ※ 회원들이 주고받을 수 있는 메모 정보를 xml로 표현하시오
+  ※ 도서 정보를 xml로 표시하시오
+-->

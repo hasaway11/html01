@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>position</title>
+    <style>
+      div { width:100px; height:100px; border:1px solid black;}
+      #red { background-color: red;}
+      #green { background-color: green;}
+      #blue { background-color: blue;}
+      #target { position: relative; left: 500px; top:50px;}
+    </style>
+  </head>
+  <body>
+    <!--
+      float: 왼쪽, 오른쪽으로. 기본값은 none
+      position : 임의의 위치에. 기본값이 static.
+        static - position을 변경하지 않으면 static
+        relative - 자신의 위치기준으로 이동. 원래 자신의 영역은 그대로 유지
+        absolute - 부모 기준으로 이동. 원래 자신의 영역은 다른 요소가 차지
+        
+        어떤 요소를 임의의 위치에 이동시킬 때 : absolute
+
+    -->
+    <div id="red">A</div>
+    <div id="target">B</div>
+    <div id="green">C</div>
+    <div id="blue">D</div>
+  </body>
+</html>

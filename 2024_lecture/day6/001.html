@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <style>
+      /* reset */
+      * {
+        /* css는 단위(px,%,em) 를 생략할 수 없다*/
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; 
+      }
+      /* 자식 선택자(child selector)*/
+      nav>ul {
+        list-style: none;
+      }
+      nav {
+        background-color: #333;
+      }
+      nav ul {
+        text-align: center;
+      }
+      /* 자손 선택자, 하위 선택자(descent selector)*/
+      nav li { 
+        background-color: #333;
+        display:inline-block;
+        margin-left: -6px;
+        width: 80px;
+        text-align: center;
+      }
+      nav a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.5s;
+      }
+
+      nav a:hover {
+        background-color: #575757;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="#">홈</a>
+        </li>
+        <li>
+          <a href="#">소개</a>
+        </li>
+        <li>
+          <a href="#">서비스</a>
+        </li>
+        <li>
+          <a href="#">연락처</a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <style>
+      #inline-block div, #float div {width: 100px; height:100px;}
+      #inline-block div {
+        background-color: red;
+        display: inline-block;
+      }
+      #float div {
+        background-color: blue;
+        float:left;
+      }
+    </style>
+  </head>
+  <body>
+    <div id='inline-block'>
+      <div></div>
+      <div></div>
+    </div>
+    <div id="float" style="overflow:hidden;">
+      <!-- 
+        부모의 높이는 자식을 포함할 수 있을 만큼
+        float되면 요소가 공중에 뜬다
+        그래서 부모의 높이는 float된 자식의 높이를 반영 X -> 0
+        자식의 높이가 부모에 반영되게 만들어야 한다 -> float을 clear한다
+
+        부모에 overflow:hidden;
+      -->
+      <div></div>
+      <div></div>
+    </div>
+    <p>우리나라 좋은나라 우리나라 좋은나라 우리나라 좋은나라 우리나라 좋은나라 우리나라 좋은나라 우리나라 좋은나라 </p>
+  </body>
+</html>
